@@ -37,9 +37,9 @@ public class DateController {
 	private String generarPeriodo() {
 		LocalTime time = LocalTime.now();
 		String periodo = "";
-		if (time.getHour() < 12) {
+		if ((time.getHour() -5 ) < 12) {
 			periodo = "dias";
-		} else if (time.getHour() < 18) {
+		} else if ((time.getHour() -5 ) < 18) {
 			periodo = "tardes";
 		} else {
 			periodo = "noches";
