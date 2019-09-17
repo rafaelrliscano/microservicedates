@@ -15,12 +15,12 @@ pipeline {
  	stage('Scan Quay'){
 		steps{
 			script{
-			sh "curl -X GET -k -H 'Authorization: Bearer Z5asL2TVPP6dtBFxu5kh5UtsPhCInbDZ7J7NkRdj' -H 'Content-Type: application/json' -H 'Accept: application/json' 'https://quay.az.rhcol.com/api/v1/repository/pocadmin/${TEMPLATE_NAME}/tag/?onlyActiveTags=true&specificTag=${TAG}' >/tmp/respuestaGetTag.json"
+			sh "curl -X GET -k -H 'Authorization: Bearer Z5asL2TVPP6dtBFxu5kh5UtsPhCInbDZ7J7NkRdj' -H 'Content-Type: application/json' -H 'Accept: application/json' 'https://104.154.97.204/api/v1/repository/rhcol/${TEMPLATE_NAME}/tag/?onlyActiveTags=true&specificTag=${TAG}' >/tmp/respuestaGetTag.json"
 				
             def respuestaGetTag = readJSON file: '/tmp/respuestaGetTag.json'
             def imageID = respuestaGetTag.tags[0].image_id
 			
-            sh "curl -X GET -k  -H 'Authorization: Bearer Z5asL2TVPP6dtBFxu5kh5UtsPhCInbDZ7J7NkRdj' -H 'Content-Type: application/json' -H 'Accept: application/json' 'https://quay.az.rhcol.com/api/v1/repository/pocadmin/${TEMPLATE_NAME}/image/${imageID}/security?vulnerabilities=true' >/tmp/respuestaGetSecScan.json"
+            sh "curl -X GET -k  -H 'Authorization: Bearer Z5asL2TVPP6dtBFxu5kh5UtsPhCInbDZ7J7NkRdj' -H 'Content-Type: application/json' -H 'Accept: application/json' 'https://104.154.97.204/api/v1/repository/rhcol/${TEMPLATE_NAME}/image/${imageID}/security?vulnerabilities=true' >/tmp/respuestaGetSecScan.json"
 			
 			TOTAL = sh (
 				script: 'grep -E \'"Severity"\\s*:\\s*"[High|Critical]+"\' -o /tmp/respuestaGetSecScan.json | wc -l',
