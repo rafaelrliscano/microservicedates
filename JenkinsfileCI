@@ -96,7 +96,7 @@ agent { label 'jenkins-slave-image-mgmt' }
   steps {
 	script {
     sh "oc login -u admin -p admin --insecure-skip-tls-verify https://35.184.225.175:8443"
-    sh 'skopeo --debug copy --src-creds="\$(oc whoami)":"\$(oc whoami -t)" --src-tls-verify=false --policy="./policy.json" --dest-tls-verify=false ' + " --dest-creds=admin:admin docker://docker-registry.default.svc:5000/${DEV_PROJECT}/${TEMPLATE_NAME}:latest docker://104.154.97.204/rhcol/${TEMPLATE_NAME}:${BUILD_NUMBER} || true"
+    sh 'skopeo --debug copy --src-creds="\$(oc whoami)":"\$(oc whoami -t)" --src-tls-verify=false --insecure-policy --dest-tls-verify=false ' + " --dest-creds=admin:admin docker://docker-registry.default.svc:5000/${DEV_PROJECT}/${TEMPLATE_NAME}:latest docker://104.154.97.204/rhcol/${TEMPLATE_NAME}:${BUILD_NUMBER} || true"
     sh 'skopeo --debug copy --src-creds=rhcol:r3dh4t1! --src-tls-verify=false --dest-tls-verify=false --policy="./policy.json"' + " --dest-creds=rhcol:r3dh4t1! docker://104.154.97.204/rhcol/${TEMPLATE_NAME}:${BUILD_NUMBER} docker://104.154.97.204/rhcol/${TEMPLATE_NAME}:prod || true"
 	
 	  }
