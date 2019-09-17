@@ -1,0 +1,108 @@
+pipeline {
+    agent { 
+        label "maven"
+    }
+	
+ environment {
+  APPLICATION_NAME = "ms-dates"
+  STAGE_TAG = "promoteToProduction"
+  DEV_PROJECT = "myproject-development"
+  STAGE_PROJECT = "poc-prod"
+  TEMPLATE_NAME = "ms-dates"
+  ARTIFACT_FOLDER = "target"
+  ARTIFACT = "${ARTIFACT_FOLDER}/microservice-dates-0.0.1-SNAPSHOT.jar"
+  TAR_FILE = "${APPLICATION_NAME}_${BUILD_NUMBER}.tar.gz"
+  PORT = 9080;
+ }
+
+ stages {
+ 
+   stage('Build and Unit Test') {
+    steps {
+         sh "mvn clean install"
+      } 
+    }	 
+
+
+  stage('Create Artifact') {
+   steps {
+    script {
+     sh "tar -czvf ${TAR_FILE} ./Dockerfile ./${ARTIFACT}"
+    }
+   }
+  }
+
+  stage('Create Image Builder') {
+   when {
+    expression {
+     openshift.withCluster() {
+      openshift.withProject(DEV_PROJECT) {
+       return !openshift.selector("bc", "${TEMPLATE_NAME}").exists();
+      }
+     }
+    }
+   }
+   steps {
+    script {
+     openshift.withCluster() {
+      openshift.withProject(DEV_PROJECT) {
+       openshift.newBuild("--name=${TEMPLATE_NAME}", "--docker-image=mauron/jdk:1.0", "--binary=true")
+      }
+     }
+    }
+   }
+  }
+  stage('Build Image') {
+   steps {
+    script {
+     openshift.withCluster() {
+      openshift.withProject(env.DEV_PROJECT) {
+       openshift.selector("bc", "${TEMPLATE_NAME}").startBuild("--from-archive=${TAR_FILE}", "--wait=true")
+      }
+     }
+    }
+   }
+  }
+ 
+   stage('Deploy To Dev') {
+   when {
+    expression {
+     openshift.withCluster() {
+      openshift.withProject(env.DEV_PROJECT) {
+       return !openshift.selector('dc', "${TEMPLATE_NAME}").exists()
+      }
+     }
+    }
+   }
+   steps {
+    script {
+     openshift.withCluster() {
+      openshift.withProject(env.DEV_PROJECT) {
+       def app = openshift.newApp("${TEMPLATE_NAME}:latest")
+       app.narrow("svc").expose("--port=${PORT}");
+       def dc = openshift.selector("dc", "${TEMPLATE_NAME}")
+       while (dc.object().spec.replicas != dc.object().status.availableReplicas) {
+        sleep 10
+       }
+      }
+     }
+    }
+   }
+  }
+
+ 
+ stage('Push Image') {
+agent { label 'jenkins-slave-image-mgmt' }
+  steps {
+	script {
+    sh "oc login -u pocadmin -p r3dh4t1! --insecure-skip-tls-verify https://masterpoc.az.rhcol.com"
+    sh 'skopeo --debug copy --src-creds="\$(oc whoami)":"\$(oc whoami -t)" --src-tls-verify=false --dest-tls-verify=false' + " --dest-creds=pocadmin:r3dh4t1! docker://docker-registry.default.svc:5000/${DEV_PROJECT}/${TEMPLATE_NAME}:latest docker://quay.az.rhcol.com/pocadmin/${TEMPLATE_NAME}:${BUILD_NUMBER} || true"
+    sh 'skopeo --debug copy --src-creds=pocadmin:r3dh4t1! --src-tls-verify=false --dest-tls-verify=false' + " --dest-creds=pocadmin:r3dh4t1! docker://quay.az.rhcol.com/pocadmin/${TEMPLATE_NAME}:${BUILD_NUMBER} docker://quay.az.rhcol.com/pocadmin/${TEMPLATE_NAME}:prod || true"
+	
+	  }
+	  }
+  }
+ }
+}
+
+
