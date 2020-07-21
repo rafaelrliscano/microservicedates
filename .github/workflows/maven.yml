@@ -18,9 +18,14 @@ jobs:
       run: mvn package 
     - name: Ejecutar en Shell
       env:
-        VAR1:  asdasd
-        VAR2:  asdasd
+        VAR1:  variable-1
+        VAR2:  variable-2
       run: |
         echo $VAR1 + $VAR2;
         pwd;
-        ls -ltr;
+        ls -ltr ./target;
+    - name: Analisis de codigo estatico
+      uses: sonarsource/sonarcloud-github-action@master
+      env: 
+        GITHUB_TOKEN: ${{secrets.REPO_TOKEN}}
+        SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
