@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  Java-Ms-Dates-CI:
     runs-on: ubuntu-latest
     steps:
     - name: Preparar fuentes
@@ -16,3 +16,11 @@ jobs:
         java-version: 1.8
     - name: Compilar proyecto
       run: mvn package 
+    - name: Ejecutar en Shell
+      env:
+        VAR1:  asdasd
+        VAR2:  asdasd
+      run: |
+        echo $VAR1 + $VAR2;
+        pwd;
+        ls -ltr;
