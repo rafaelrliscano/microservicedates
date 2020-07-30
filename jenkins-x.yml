@@ -46,9 +46,7 @@ pipelineConfig:
 #                    cpu: 0.4
 #                    memory: 256Mi
 #              steps:
-#                 - name: chance pwd
-#                   command: cd
-#                   args: ${REPO_NAME}                
 #                 - name: deploy pod
+#                   dir: ${REPO_NAME}
 #                   command: kubectl
 #                   args: ['apply','-f', '${DEPLOY_FILENAME}.yaml']
