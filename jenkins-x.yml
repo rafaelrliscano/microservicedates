@@ -1,1 +1,54 @@
-buildPack: maven
+buildPack: none
+pipelineConfig:
+  pipelines:
+    release:
+      pipeline:
+        agent:
+          image: "gcr.io/project-k8s-278616/microservicesdates:v1.0"
+        environment:
+          - name: GIT_URL
+            value: https://github.com/
+          - name: ORG_URL
+            value: rafaelrliscano/
+          - name: REPO_NAME
+            value: microservicedates
+          - name: DEPLOY_FILENAME
+            value: dep-microservicedate
+          options:
+          containerOptions:
+            resources:
+              requests:
+                cpu: 0.1
+                memory: 64Mi
+              limits:
+                cpu: 0.2
+                memory: 128Mi
+          timeout:
+            time: 15
+            unit: minutes
+        stages:
+          - name: "Stage #1: Clone repository"
+            options:
+              containerOptions:
+                resources:
+                  limits:
+                    cpu: 0.4
+                    memory: 256Mi
+            steps:
+              - name: clone repo
+                command: git
+                args: ['clone', '${GIT_URL}${ORG_URL}${REPO_NAME}.git']
+#          - name: "Stage #2: Deploy to dev"
+#            options:
+#              containerOptions:
+#                resources:
+#                  limits:
+#                    cpu: 0.4
+#                    memory: 256Mi
+#              steps:
+#                 - name: chance pwd
+#                   command: cd
+#                   args: ${REPO_NAME}                
+#                 - name: deploy pod
+#                   command: kubectl
+#                   args: ['apply','-f', '${DEPLOY_FILENAME}.yaml']
