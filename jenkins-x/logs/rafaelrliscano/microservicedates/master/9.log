@@ -1,0 +1,28 @@
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-mxh5r-9[0m stage [32mmeta-pipeline[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1596157471.9598331,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-mxh5r-9[0m stage [32mmeta-pipeline[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-mxh5r-9[0m stage [32mmeta-pipeline[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-mxh5r-9[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-rafaelrliscano-microservic-mxh5r-tthk8[0m
+{"level":"info","ts":1596157477.770482,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/**************/microservicedates.git @ f5f34c83a15af531f849b73acaa8f19216cf6075 in path /workspace/source"}
+{"level":"warn","ts":1596157477.7705896,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1596157477.8093805,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-mxh5r-9[0m stage [32mmeta-pipeline[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-mxh5r-9[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:f5f34c83a15af531f849b73acaa8f19216cf6075
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-mxh5r-9[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-mxh5r-9[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+error: failed to load project config in dir /workspace/source: Validation failures in YAML file /workspace/source/jenkins-x.yml:
+pipelineConfig.pipelines.release.pipeline.stages.1.options: Additional property steps is not allowed
+pipelineConfig.pipelines.release.pipeline.stages.2.options: Additional property steps is not allowed
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-effective-pipeline'. The execution of the pipeline has stopped.[0m
