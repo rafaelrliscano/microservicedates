@@ -16,7 +16,7 @@ pipelineConfig:
             value: dep-microservicedate
           - name: SERVICE_URL
             value: http://url.service:8081/nms
-          options:
+        options:
           containerOptions:
             resources:
               requests:
