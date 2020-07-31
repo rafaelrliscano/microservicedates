@@ -1,0 +1,27 @@
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cn8rz-10[0m stage [32mmeta-pipeline[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1596158537.822832,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cn8rz-10[0m stage [32mmeta-pipeline[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cn8rz-10[0m stage [32mmeta-pipeline[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cn8rz-10[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-rafaelrliscano-microservic-cn8rz-sjgdm[0m
+{"level":"info","ts":1596158544.654176,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/**************/microservicedates.git @ 3e3ed222aa4d5b4355c1dbe5cdbb56080264a5e0 in path /workspace/source"}
+{"level":"warn","ts":1596158544.6542838,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1596158544.6945796,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cn8rz-10[0m stage [32mmeta-pipeline[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cn8rz-10[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:3e3ed222aa4d5b4355c1dbe5cdbb56080264a5e0
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cn8rz-10[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cn8rz-10[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+error: failed to load project config in dir /workspace/source: Validation failures in YAML file /workspace/source/jenkins-x.yml:
+pipelineConfig.pipelines.release.pipeline.stages.2.steps.0.args: Invalid type. Expected: array, given: string
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-effective-pipeline'. The execution of the pipeline has stopped.[0m
