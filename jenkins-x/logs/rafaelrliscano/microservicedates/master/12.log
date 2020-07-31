@@ -1,0 +1,25 @@
+
+Showing logs for build [32mrafaelrliscano-microservicedate-8dkvz-12[0m stage [32mstage-1-clone-repository[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1596159262.3850982,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mrafaelrliscano-microservicedate-8dkvz-12[0m stage [32mstage-1-clone-repository[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-8dkvz-12[0m stage [32mstage-1-clone-repository[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-8dkvz-12[0m stage [32mstage-1-clone-repository[0m and container [32mstep-create-dir-workspace-nzltv[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-8dkvz-12[0m stage [32mstage-1-clone-repository[0m and container [32mstep-git-source-rafaelrliscano-microservicedate-8dkvz-jqf5s[0m
+{"level":"info","ts":1596159278.3880112,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/**************/microservicedates.git @ v0.0.5 in path /workspace/source"}
+{"level":"warn","ts":1596159278.388091,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1596159278.4247649,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mrafaelrliscano-microservicedate-8dkvz-12[0m stage [32mstage-1-clone-repository[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-8dkvz-12[0m stage [32mstage-1-clone-repository[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:719283c90901c1834340e02eaf298db4d3efa476
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mrafaelrliscano-microservicedate-8dkvz-12[0m stage [32mstage-1-clone-repository[0m and container [32mstep-clone-repo[0m
+/bin/sh: 1: git: not found
+[31m
+Pipeline failed on stage 'stage-1-clone-repository' : container 'step-clone-repo'. The execution of the pipeline has stopped.[0m
