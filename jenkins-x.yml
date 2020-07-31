@@ -47,7 +47,7 @@ pipelineConfig:
                   limits:
                     cpu: 0.4
                     memory: 256Mi
-              steps:
+            steps:
                  - name: deploy pod
                    dir: ${REPO_NAME}
                    command: kubectl
@@ -59,7 +59,7 @@ pipelineConfig:
                   limits:
                     cpu: 0.4
                     memory: 256Mi
-              steps:
+            steps:
                  - name: readiness prove
                    command: wget 
                    args: ${SERVICE_URL}
