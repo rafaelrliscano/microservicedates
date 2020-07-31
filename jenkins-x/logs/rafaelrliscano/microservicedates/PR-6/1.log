@@ -1,0 +1,55 @@
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-8vbfk-1[0m stage [32mmeta-pipeline[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1596203860.0688877,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-8vbfk-1[0m stage [32mmeta-pipeline[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-8vbfk-1[0m stage [32mmeta-pipeline[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-8vbfk-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-rafaelrliscano-microservic-8vbfk-rnrcv[0m
+{"level":"info","ts":1596203867.5310714,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/**************/microservicedates.git @ 719283c90901c1834340e02eaf298db4d3efa476 in path /workspace/source"}
+{"level":"warn","ts":1596203867.5316978,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1596203867.5771797,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-8vbfk-1[0m stage [32mmeta-pipeline[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-8vbfk-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:719283c90901c1834340e02eaf298db4d3efa476,6:c6c17a75825c5d608ea0e6186f979499ac474f60
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git fetch origin --unshallow c6c17a75825c5d608ea0e6186f979499ac474f60: 719283c90901c1834340e02eaf298db4d3efa476:
+DEBUG: ran git fetch --unshallow origin c6c17a75825c5d608ea0e6186f979499ac474f60: 719283c90901c1834340e02eaf298db4d3efa476: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 719283c90901c1834340e02eaf298db4d3efa476
+DEBUG: ran git reset --hard 719283c90901c1834340e02eaf298db4d3efa476 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge c6c17a75825c5d608ea0e6186f979499ac474f60
+DEBUG: ran git merge c6c17a75825c5d608ea0e6186f979499ac474f60 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 719283c90901c1834340e02eaf298db4d3efa476..HEAD
+Merged SHA dbbd1920cba25558e1321dcdae8a5f1934da0c7d with commit message 'Merge commit 'c6c17a75825c5d608ea0e6186f979499ac474f60'' into base branch master
+Merged SHA c6c17a75825c5d608ea0e6186f979499ac474f60 with commit message 'ajuste git clone' into base branch master
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-8vbfk-1[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow c6c17a75825c5d608ea0e6186f979499ac474f60: 719283c90901c1834340e02eaf298db4d3efa476:
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin c6c17a75825c5d608ea0e6186f979499ac474f60: 719283c90901c1834340e02eaf298db4d3efa476:
+DEBUG: ran git fetch origin c6c17a75825c5d608ea0e6186f979499ac474f60: 719283c90901c1834340e02eaf298db4d3efa476: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git rev-parse --is-shallow-repository
+DEBUG: Unshallowed git repo in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 719283c90901c1834340e02eaf298db4d3efa476
+DEBUG: ran git reset --hard 719283c90901c1834340e02eaf298db4d3efa476 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge c6c17a75825c5d608ea0e6186f979499ac474f60
+DEBUG: ran git merge c6c17a75825c5d608ea0e6186f979499ac474f60 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 719283c90901c1834340e02eaf298db4d3efa476..HEAD
+Merged SHA 7cc752b66ac1e86289da99274ec20042e3ad2310 with commit message 'Merge commit 'c6c17a75825c5d608ea0e6186f979499ac474f60'' into base branch master
+Merged SHA c6c17a75825c5d608ea0e6186f979499ac474f60 with commit message 'ajuste git clone' into base branch master
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-8vbfk-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+error: failed to load project config in dir /workspace/source: failed to validate YAML file /workspace/source/jenkins-x.yml due to yaml: line 42: did not find expected key
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-effective-pipeline'. The execution of the pipeline has stopped.[0m
