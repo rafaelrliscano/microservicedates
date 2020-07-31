@@ -52,13 +52,13 @@ pipelineConfig:
                    dir: ${REPO_NAME}
                    command: kubectl
                    args: ['apply','-f', '${DEPLOY_FILENAME}.yaml']
-          - name: "Stage #3: Run tests"
-            options:
-              containerOptions:
-                resources:
-                  limits:
-                    cpu: 0.4
-                    memory: 256Mi
+#          - name: "Stage #3: Run tests"
+#            options:
+#              containerOptions:
+#                resources:
+#                  limits:
+#                    cpu: 0.4
+#                    memory: 256Mi
 #            steps:
 #                 - name: readiness prove
 #                   command: wget 
