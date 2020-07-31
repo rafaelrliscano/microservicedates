@@ -38,8 +38,9 @@ pipelineConfig:
                     memory: 256Mi
             steps:
               - name: clone repo
-                command: git
-                args: ['clone', '${GIT_URL}${ORG_URL}${REPO_NAME}.git']
+#                command: git
+#                args: ['clone', '${GIT_URL}${ORG_URL}${REPO_NAME}.git']
+                - sh: git clone ${GIT_URL}${ORG_URL}${REPO_NAME}.git
           - name: "Stage #2: Deploy to dev"
             options:
               containerOptions:
