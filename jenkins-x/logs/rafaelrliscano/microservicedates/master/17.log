@@ -1,0 +1,27 @@
+
+Showing logs for build [32mrafaelrliscano-microservicedate-r9gv5-17[0m stage [32mrelease[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1596496847.6622376,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mrafaelrliscano-microservicedate-r9gv5-17[0m stage [32mrelease[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-r9gv5-17[0m stage [32mrelease[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-r9gv5-17[0m stage [32mrelease[0m and container [32mstep-git-source-rafaelrliscano-microservicedate-r9gv5-jvj59[0m
+{"level":"info","ts":1596496863.1666675,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/**************/microservicedates.git @ v0.0.7 in path /workspace/source"}
+{"level":"warn","ts":1596496863.166768,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1596496863.2086143,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mrafaelrliscano-microservicedate-r9gv5-17[0m stage [32mrelease[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-r9gv5-17[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:0959940e961d9ab6d820bca9bb3c982f65867867
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mrafaelrliscano-microservicedate-r9gv5-17[0m stage [32mrelease[0m and container [32mstep-step2[0m
+gcr.io
+
+Showing logs for build [32mrafaelrliscano-microservicedate-r9gv5-17[0m stage [32mrelease[0m and container [32mstep-step3[0m
+microservicesdates
+
+Showing logs for build [32mrafaelrliscano-microservicedate-r9gv5-17[0m stage [32mrelease[0m and container [32mstep-step4[0m
+v1.0
