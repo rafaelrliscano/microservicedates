@@ -4,7 +4,7 @@ pipelineConfig:
     release:
       pipeline:
         agent:
-          image: "gcr.io/project-k8s-278616/microservicesdates:v1.0"
+          image: "gcr.io/project-k8s-278616/microservicesdates:latest"
         environment:
           - name: GIT_URL
             value: https://github.com/
@@ -36,23 +36,29 @@ pipelineConfig:
                   limits:
                     cpu: 0.4
                     memory: 256Mi
-            steps:
-              - name: clone repo
+#            steps:
+#              - name: clone repo
 #                command: git
 #                args: ['clone', '${GIT_URL}${ORG_URL}${REPO_NAME}.git']
-                - sh: git clone ${GIT_URL}${ORG_URL}${REPO_NAME}.git
-          - name: "Stage #2: Deploy to dev"
-            options:
-              containerOptions:
-                resources:
-                  limits:
-                    cpu: 0.4
-                    memory: 256Mi
+#                - sh: git clone ${GIT_URL}${ORG_URL}${REPO_NAME}.git
+          - name: release
             steps:
-                 - name: deploy pod
-                   dir: ${REPO_NAME}
-                   command: kubectl
-                   args: ['apply','-f', '${DEPLOY_FILENAME}.yaml']
+              - name: verify-preintall
+                dir: /workspace/source/env
+                command: jx
+                args: ['step','verify','preinstall']
+#         - name: "Stage #2: Deploy to dev"
+#           options:
+#             containerOptions:
+#               resources:
+#                 limits:
+#                   cpu: 0.4
+#                   memory: 256Mi
+#           steps:
+#                - name: deploy pod
+#                  dir: ${REPO_NAME}
+#                  command: kubectl
+#                  args: ['apply','-f', '${DEPLOY_FILENAME}.yaml']
 #          - name: "Stage #3: Run tests"
 #            options:
 #              containerOptions:
