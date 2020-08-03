@@ -4,18 +4,24 @@ pipelineConfig:
     release:
       pipeline:
         agent:
-          image: "gcr.io/project-k8s-278616/microservicesdates:latest"
+          image: "gcr.io/project-k8s-278616/microservicesdates:v1.0"
         environment:
-          - name: GIT_URL
-            value: https://github.com/
-          - name: ORG_URL
-            value: rafaelrliscano/
-          - name: REPO_NAME
-            value: microservicedates
-          - name: DEPLOY_FILENAME
-            value: dep-microservicedate
-          - name: SERVICE_URL
-            value: http://url.service:8081/nms
+#          - name: GIT_URL
+#            value: https://github.com/
+#          - name: ORG_URL
+#            value: rafaelrliscano/
+#          - name: REPO_NAME
+#            value: microservicedates
+#          - name: DEPLOY_FILENAME
+#            value: dep-microservicedate
+#          - name: SERVICE_URL
+#            value: http://url.service:8081/nms
+          - name: DOCKER_REGISTRY
+            value: gcr.io
+          - name: IMAGE_NAME
+            value: microservicesdates
+          - name: VERSION
+            value: v1.0
         options:
           containerOptions:
             resources:
@@ -43,10 +49,13 @@ pipelineConfig:
 #                - sh: git clone ${GIT_URL}${ORG_URL}${REPO_NAME}.git
           - name: release
             steps:
-              - name: verify-preintall
-                dir: /workspace/source/env
-                command: jx
-                args: ['step','verify','preinstall']
+              - name: echos environment
+#               dir: /workspace/source/env
+#               command: jx
+#               args: ['step','verify','preinstall']
+                - sh: echo $DOCKER_REGISTRY
+                - sh: echo $IMAGE_NAME
+                - sh: echo $VERSION
 #         - name: "Stage #2: Deploy to dev"
 #           options:
 #             containerOptions:
