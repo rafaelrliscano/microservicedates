@@ -1,0 +1,59 @@
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-86vkd-2[0m stage [32mmeta-pipeline[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1596493506.4968107,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-86vkd-2[0m stage [32mmeta-pipeline[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-86vkd-2[0m stage [32mmeta-pipeline[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-86vkd-2[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-rafaelrliscano-microservic-86vkd-m9l6t[0m
+{"level":"info","ts":1596493512.270611,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/**************/microservicedates.git @ 973797e59b3527035f6037e422f528d0a6dc7e96 in path /workspace/source"}
+{"level":"warn","ts":1596493512.2706897,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1596493512.3070438,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-86vkd-2[0m stage [32mmeta-pipeline[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-86vkd-2[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:973797e59b3527035f6037e422f528d0a6dc7e96,7:b29f22ad204a4ffd819ea10f386ac5df7d2e84b2
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow b29f22ad204a4ffd819ea10f386ac5df7d2e84b2: 973797e59b3527035f6037e422f528d0a6dc7e96:
+DEBUG: ran git fetch --unshallow origin b29f22ad204a4ffd819ea10f386ac5df7d2e84b2: 973797e59b3527035f6037e422f528d0a6dc7e96: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 973797e59b3527035f6037e422f528d0a6dc7e96
+DEBUG: ran git reset --hard 973797e59b3527035f6037e422f528d0a6dc7e96 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git merge b29f22ad204a4ffd819ea10f386ac5df7d2e84b2
+DEBUG: ran git merge b29f22ad204a4ffd819ea10f386ac5df7d2e84b2 in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 973797e59b3527035f6037e422f528d0a6dc7e96..HEAD
+Merged SHA 1f92b73f30620dd911d58cdd9f8bdbc9d9997aaf with commit message 'Merge commit 'b29f22ad204a4ffd819ea10f386ac5df7d2e84b2'' into base branch master
+Merged SHA b29f22ad204a4ffd819ea10f386ac5df7d2e84b2 with commit message 'ajuste pipline 01' into base branch master
+Merged SHA 6f7123824551e9886bfc2cfab69a943d88595223 with commit message 'ajuste pipeline 00' into base branch master
+Merged SHA 723049c8c23173c6e56dd3074b961b877e938f88 with commit message 'ajuste pipeline' into base branch master
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-86vkd-2[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow b29f22ad204a4ffd819ea10f386ac5df7d2e84b2: 973797e59b3527035f6037e422f528d0a6dc7e96:
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin b29f22ad204a4ffd819ea10f386ac5df7d2e84b2: 973797e59b3527035f6037e422f528d0a6dc7e96:
+DEBUG: ran git fetch origin b29f22ad204a4ffd819ea10f386ac5df7d2e84b2: 973797e59b3527035f6037e422f528d0a6dc7e96: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git rev-parse --is-shallow-repository
+DEBUG: Unshallowed git repo in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 973797e59b3527035f6037e422f528d0a6dc7e96
+DEBUG: ran git reset --hard 973797e59b3527035f6037e422f528d0a6dc7e96 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge b29f22ad204a4ffd819ea10f386ac5df7d2e84b2
+DEBUG: ran git merge b29f22ad204a4ffd819ea10f386ac5df7d2e84b2 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 973797e59b3527035f6037e422f528d0a6dc7e96..HEAD
+Merged SHA db3ad5d66b90b5de99cc3866707bb402db595cc0 with commit message 'Merge commit 'b29f22ad204a4ffd819ea10f386ac5df7d2e84b2'' into base branch master
+Merged SHA b29f22ad204a4ffd819ea10f386ac5df7d2e84b2 with commit message 'ajuste pipline 01' into base branch master
+Merged SHA 6f7123824551e9886bfc2cfab69a943d88595223 with commit message 'ajuste pipeline 00' into base branch master
+Merged SHA 723049c8c23173c6e56dd3074b961b877e938f88 with commit message 'ajuste pipeline' into base branch master
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-86vkd-2[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+error: failed to create effective pipeline for release: validation failed for Pipeline: expected exactly one, got neither: stages[0].parallel, stages[0].stages, stages[0].steps
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-effective-pipeline'. The execution of the pipeline has stopped.[0m
