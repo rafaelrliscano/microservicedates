@@ -41,7 +41,7 @@ pipelineConfig:
 #                command: git
 #                args: ['clone', '${GIT_URL}${ORG_URL}${REPO_NAME}.git']
 #                - sh: git clone ${GIT_URL}${ORG_URL}${REPO_NAME}.git
-          - name: release
+               - name: release
             steps:
               - name: verify-preintall
                 dir: /workspace/source/env
