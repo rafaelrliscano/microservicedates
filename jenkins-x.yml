@@ -29,13 +29,13 @@ pipelineConfig:
             time: 15
             unit: minutes
         stages:
-          - name: "Stage #1: Clone repository"
-            options:
-              containerOptions:
-                resources:
-                  limits:
-                    cpu: 0.4
-                    memory: 256Mi
+#          - name: "Stage #1: Clone repository"
+#            options:
+#              containerOptions:
+#                resources:
+#                  limits:
+#                    cpu: 0.4
+#                    memory: 256Mi
 #            steps:
 #              - name: clone repo
 #                command: git
