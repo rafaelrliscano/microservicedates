@@ -6,16 +6,6 @@ pipelineConfig:
         agent:
           image: "gcr.io/project-k8s-278616/microservicesdates:v1.0"
         environment:
-#          - name: GIT_URL
-#            value: https://github.com/
-#          - name: ORG_URL
-#            value: rafaelrliscano/
-#          - name: REPO_NAME
-#            value: microservicedates
-#          - name: DEPLOY_FILENAME
-#            value: dep-microservicedate
-#          - name: SERVICE_URL
-#            value: http://url.service:8081/nms
           - name: DOCKER_REGISTRY
             value: gcr.io
           - name: IMAGE_NAME
@@ -35,47 +25,8 @@ pipelineConfig:
             time: 15
             unit: minutes
         stages:
-#          - name: "Stage #1: Clone repository"
-#            options:
-#              containerOptions:
-#                resources:
-#                  limits:
-#                    cpu: 0.4
-#                    memory: 256Mi
-#            steps:
-#              - name: clone repo
-#                command: git
-#                args: ['clone', '${GIT_URL}${ORG_URL}${REPO_NAME}.git']
-#                - sh: git clone ${GIT_URL}${ORG_URL}${REPO_NAME}.git
           - name: release
             steps:
-              - name: echos environment
-#               dir: /workspace/source/env
-#               command: jx
-#               args: ['step','verify','preinstall']
-                - sh: echo $DOCKER_REGISTRY
-                - sh: echo $IMAGE_NAME
-                - sh: echo $VERSION
-#         - name: "Stage #2: Deploy to dev"
-#           options:
-#             containerOptions:
-#               resources:
-#                 limits:
-#                   cpu: 0.4
-#                   memory: 256Mi
-#           steps:
-#                - name: deploy pod
-#                  dir: ${REPO_NAME}
-#                  command: kubectl
-#                  args: ['apply','-f', '${DEPLOY_FILENAME}.yaml']
-#          - name: "Stage #3: Run tests"
-#            options:
-#              containerOptions:
-#                resources:
-#                  limits:
-#                    cpu: 0.4
-#                    memory: 256Mi
-#            steps:
-#                 - name: readiness prove
-#                   command: wget 
-#                   args: ${SERVICE_URL}
+              - sh: echo $DOCKER_REGISTRY
+              - sh: echo $IMAGE_NAME
+              - sh: echo $VERSION
