@@ -6,6 +6,8 @@ pipelineConfig:
         agent:
           image: "gcr.io/project-k8s-278616/microservicesdates:v1.0"
         environment:
+          - name: DEPLOY_NAMESPACE
+            value: microservicesdates-ns
           - name: DOCKER_REGISTRY
             value: gcr.io
           - name: IMAGE_NAME
