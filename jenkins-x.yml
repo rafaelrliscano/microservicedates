@@ -1,7 +1,7 @@
 buildPack: none
 pipelineConfig:
   pipelines:
-    release:
+    pullRequest:
       pipeline:
         agent:
           image: "gcr.io/project-k8s-278616/microservicesdates:v1.0"
