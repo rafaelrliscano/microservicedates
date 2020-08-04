@@ -1,7 +1,7 @@
 buildPack: none
 pipelineConfig:
   pipelines:
-    release:
+    pullRequest:
       pipeline:
         agent:
           image: "gcr.io/project-k8s-278616/microservicesdates:v1.0"
@@ -29,4 +29,4 @@ pipelineConfig:
         stages:
           - name: release
             steps:
-              - sh: echo $DOCKER_REGISTRY" - "$IMAGE_NAME" - "$VERSION
+              - sh: echo " Datos " $DOCKER_REGISTRY" - "$IMAGE_NAME" - "$VERSION
