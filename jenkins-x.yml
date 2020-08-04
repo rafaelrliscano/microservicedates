@@ -15,7 +15,7 @@ pipelineConfig:
           - name: VERSION
             value: v1.0
           - name: BUILD_NUMBER
-            value: 0.0.1
+            value: 0.0.2
         options:
           containerOptions:
             resources:
