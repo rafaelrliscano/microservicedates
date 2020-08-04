@@ -14,6 +14,8 @@ pipelineConfig:
             value: microservicesdates
           - name: VERSION
             value: v1.0
+          - name: BUILD_NUMBER
+            value: 0.0.1
         options:
           containerOptions:
             resources:
