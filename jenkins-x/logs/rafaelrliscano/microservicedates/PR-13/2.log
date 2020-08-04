@@ -1,0 +1,35 @@
+
+Showing logs for build [32mrafaelrliscano-microservicedate-q24n4-2[0m stage [32mrelease[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1596504848.1730704,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mrafaelrliscano-microservicedate-q24n4-2[0m stage [32mrelease[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-q24n4-2[0m stage [32mrelease[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-q24n4-2[0m stage [32mrelease[0m and container [32mstep-git-source-rafaelrliscano-microservicedate-q24n4-fr6ff[0m
+{"level":"info","ts":1596504853.2522845,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/**************/microservicedates.git @ master in path /workspace/source"}
+{"level":"warn","ts":1596504853.2524,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1596504853.2888162,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mrafaelrliscano-microservicedate-q24n4-2[0m stage [32mrelease[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-q24n4-2[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:fa928df67dedab90295af56db96a3ebae3ebacb0,13:dd956f3617f9238f1d5dd4e1f824fdd13e42e408
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow dd956f3617f9238f1d5dd4e1f824fdd13e42e408: fa928df67dedab90295af56db96a3ebae3ebacb0:
+DEBUG: ran git fetch --unshallow origin dd956f3617f9238f1d5dd4e1f824fdd13e42e408: fa928df67dedab90295af56db96a3ebae3ebacb0: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard fa928df67dedab90295af56db96a3ebae3ebacb0
+DEBUG: ran git reset --hard fa928df67dedab90295af56db96a3ebae3ebacb0 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge dd956f3617f9238f1d5dd4e1f824fdd13e42e408
+DEBUG: ran git merge dd956f3617f9238f1d5dd4e1f824fdd13e42e408 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e fa928df67dedab90295af56db96a3ebae3ebacb0..HEAD
+Merged SHA f24cae19021e5ed63c202489037e11dd918e8dec with commit message 'Merge commit 'dd956f3617f9238f1d5dd4e1f824fdd13e42e408'' into base branch master
+Merged SHA dd956f3617f9238f1d5dd4e1f824fdd13e42e408 with commit message 'Cambio echo' into base branch master
+Merged SHA b4fd3bb393fe2935a48d3a2c32306c3abcfd7932 with commit message 'Cambio a pullRequest' into base branch master
+
+Showing logs for build [32mrafaelrliscano-microservicedate-q24n4-2[0m stage [32mrelease[0m and container [32mstep-step2[0m
+ Datos  gcr.io - microservicesdates - v1.0
