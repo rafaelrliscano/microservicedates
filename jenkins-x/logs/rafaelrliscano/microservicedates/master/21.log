@@ -1,0 +1,21 @@
+
+Showing logs for build [32mrafaelrliscano-microservicedate-gskkp-21[0m stage [32mrelease[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1596505120.9892406,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mrafaelrliscano-microservicedate-gskkp-21[0m stage [32mrelease[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-gskkp-21[0m stage [32mrelease[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-gskkp-21[0m stage [32mrelease[0m and container [32mstep-git-source-rafaelrliscano-microservicedate-gskkp-d6g2w[0m
+{"level":"info","ts":1596505125.86001,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/**************/microservicedates.git @ v0.0.10 in path /workspace/source"}
+{"level":"warn","ts":1596505125.860111,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1596505125.8959305,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mrafaelrliscano-microservicedate-gskkp-21[0m stage [32mrelease[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mrafaelrliscano-microservicedate-gskkp-21[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:9583de8e8bcaa85f50e39a15df1ea1b7512f72ca
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mrafaelrliscano-microservicedate-gskkp-21[0m stage [32mrelease[0m and container [32mstep-step2[0m
+ Datos  gcr.io - microservicesdates - v1.0
