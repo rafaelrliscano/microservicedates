@@ -1,0 +1,58 @@
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cxm6t-1[0m stage [32mmeta-pipeline[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1596507276.1276443,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cxm6t-1[0m stage [32mmeta-pipeline[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cxm6t-1[0m stage [32mmeta-pipeline[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cxm6t-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-rafaelrliscano-microservic-cxm6t-npzjj[0m
+{"level":"info","ts":1596507282.639784,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/**************/microservicedates.git @ 9fa0daa8ed57c2bcb87c0a5f38725f480b944049 in path /workspace/source"}
+{"level":"warn","ts":1596507282.6398895,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1596507282.6799247,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cxm6t-1[0m stage [32mmeta-pipeline[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cxm6t-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:9fa0daa8ed57c2bcb87c0a5f38725f480b944049,18:3886aca049dc4e78d8437ab9a9de6905671551ab
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 3886aca049dc4e78d8437ab9a9de6905671551ab: 9fa0daa8ed57c2bcb87c0a5f38725f480b944049:
+DEBUG: ran git fetch --unshallow origin 3886aca049dc4e78d8437ab9a9de6905671551ab: 9fa0daa8ed57c2bcb87c0a5f38725f480b944049: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 9fa0daa8ed57c2bcb87c0a5f38725f480b944049
+DEBUG: ran git reset --hard 9fa0daa8ed57c2bcb87c0a5f38725f480b944049 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 3886aca049dc4e78d8437ab9a9de6905671551ab
+DEBUG: ran git merge 3886aca049dc4e78d8437ab9a9de6905671551ab in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 9fa0daa8ed57c2bcb87c0a5f38725f480b944049..HEAD
+Merged SHA f05b765340d09d87fb951c5d25f8e8610b979b35 with commit message 'Merge commit '3886aca049dc4e78d8437ab9a9de6905671551ab'' into base branch master
+Merged SHA 3886aca049dc4e78d8437ab9a9de6905671551ab with commit message 'agrega la linea pipeline' into base branch master
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cxm6t-1[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 3886aca049dc4e78d8437ab9a9de6905671551ab: 9fa0daa8ed57c2bcb87c0a5f38725f480b944049:
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin 3886aca049dc4e78d8437ab9a9de6905671551ab: 9fa0daa8ed57c2bcb87c0a5f38725f480b944049:
+DEBUG: ran git fetch origin 3886aca049dc4e78d8437ab9a9de6905671551ab: 9fa0daa8ed57c2bcb87c0a5f38725f480b944049: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git rev-parse --is-shallow-repository
+DEBUG: Unshallowed git repo in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git reset --hard 9fa0daa8ed57c2bcb87c0a5f38725f480b944049
+DEBUG: ran git reset --hard 9fa0daa8ed57c2bcb87c0a5f38725f480b944049 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 3886aca049dc4e78d8437ab9a9de6905671551ab
+DEBUG: ran git merge 3886aca049dc4e78d8437ab9a9de6905671551ab in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 9fa0daa8ed57c2bcb87c0a5f38725f480b944049..HEAD
+Merged SHA e35ad43a5313dbd32b6367ba7fb8c84fe070a23d with commit message 'Merge commit '3886aca049dc4e78d8437ab9a9de6905671551ab'' into base branch master
+Merged SHA 3886aca049dc4e78d8437ab9a9de6905671551ab with commit message 'agrega la linea pipeline' into base branch master
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cxm6t-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Effective pipeline written to jenkins-x-pr-build-effective.yml
+
+Showing logs for build [32mmeta-rafaelrliscano-microservic-cxm6t-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+error: failed to generate Tekton CRDs: unable to extract the requested pipeline: no pipeline defined for kind pullrequest
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-tekton-crds'. The execution of the pipeline has stopped.[0m
