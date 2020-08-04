@@ -27,6 +27,4 @@ pipelineConfig:
         stages:
           - name: release
             steps:
-              - sh: echo $DOCKER_REGISTRY
-              - sh: echo $IMAGE_NAME
-              - sh: echo $VERSION
+              - sh: echo $DOCKER_REGISTRY" - "$IMAGE_NAME" - "$VERSION
