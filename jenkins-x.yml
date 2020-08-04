@@ -2,7 +2,6 @@ buildPack: none
 pipelineConfig:
   pipelines:
     release:
-      promote:
         agent:
           image: "gcr.io/project-k8s-278616/microservicesdates:v1.0"
         environment:
