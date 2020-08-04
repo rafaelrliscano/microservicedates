@@ -3,31 +3,30 @@ pipelineConfig:
   pipelines:
     release:
       promote:
-        pipeline:
-          agent:
-            image: "gcr.io/project-k8s-278616/microservicesdates:v1.0"
-          environment:
-            - name: DEPLOY_NAMESPACE
-              value: microservicesdates-ns
-            - name: DOCKER_REGISTRY
-              value: gcr.io
-            - name: IMAGE_NAME
-              value: microservicesdates
-            - name: VERSION
-              value: v1.0
-          options:
-            containerOptions:
-              resources:
-                requests:
-                  cpu: 0.1
-                  memory: 64Mi
-                limits:
-                  cpu: 0.2
-                  memory: 128Mi
-            timeout:
-              time: 15
-              unit: minutes
-          stages:
-            - name: release
-              steps:
-                - sh: echo " Datos " $DOCKER_REGISTRY" - "$IMAGE_NAME" - "$VERSION
+        agent:
+          image: "gcr.io/project-k8s-278616/microservicesdates:v1.0"
+        environment:
+          - name: DEPLOY_NAMESPACE
+            value: microservicesdates-ns
+          - name: DOCKER_REGISTRY
+            value: gcr.io
+          - name: IMAGE_NAME
+            value: microservicesdates
+          - name: VERSION
+            value: v1.0
+        options:
+          containerOptions:
+            resources:
+              requests:
+                cpu: 0.1
+                memory: 64Mi
+              limits:
+                cpu: 0.2
+                memory: 128Mi
+          timeout:
+            time: 15
+            unit: minutes
+        stages:
+          - name: release
+            steps:
+              - sh: echo " Datos " $DOCKER_REGISTRY" - "$IMAGE_NAME" - "$VERSION
